@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz · Descubra em que fase do recomeço você está</title>
+  <meta property="og:image" content="/public/Anasueli.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/quiz/styles/main.css">
+</head>
+<body>
+
+<div class="quiz-wrapper">
+  <div class="quiz-container">
+    <div class="quiz-card">
+
+      <!-- ==================== WELCOME ==================== -->
+      <div id="screen-welcome" class="screen welcome active">
+        <div class="welcome-icon">
+          <svg class="icon-heart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </div>
+        <h1>Descubra em que fase<br>do recomeço você está</h1>
+        <p class="subtitle">Um quiz rápido e honesto para mulheres que sentem que algo dentro delas pede atenção, mas não sabem por onde começar.</p>
+        <div class="badge-row">
+          <span class="badge">
+            <svg class="icon-chat" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/></svg>
+            7 perguntas
+          </span>
+          <span class="badge">
+            <svg class="icon-clock" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+            3 minutos
+          </span>
+          <span class="badge">
+            <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/></svg>
+            resultado personalizado
+          </span>
+        </div>
+        <button class="btn-primary" onclick="startQuiz()">
+          Quero descobrir
+          <svg class="icon-forward" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </button>
+        <p class="privacy-note">
+          <svg class="icon-lock" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"/></svg>
+          Suas respostas são privadas e não serão compartilhadas.
+        </p>
+      </div>
+
+      <!-- ==================== QUESTIONS ==================== -->
+      <div id="screen-question" class="screen question-screen">
+        <div class="progress-header">
+          <span class="progress-label" id="progress-label">Pergunta 1 de 7</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill" style="width: 14.28%"></div>
+        </div>
+        <h2 class="question-text" id="question-text"></h2>
+        <div class="options" id="options-container"></div>
+      </div>
+
+      <!-- ==================== RESULT ==================== -->
+      <div id="screen-result" class="screen result-screen">
+        <div class="result-badge"><span>Seu resultado</span></div>
+        <div class="result-hero" id="result-hero">
+          <div class="result-hero-icon" id="result-hero-icon"></div>
+          <h2 id="result-title"></h2>
+          <p class="result-subtitle" id="result-subtitle"></p>
+        </div>
+        <p class="result-description" id="result-description"></p>
+        <div class="result-insight" id="result-insight">
+          <p id="result-insight-text"></p>
+        </div>
+        
+        <div class="cta-section">
+          <div class="cta-label">
+            <svg class="icon-bolt" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg>
+            Seu próximo passo
+          </div>
+          <div class="cta-cards">
+            <a href="#" class="cta-card cta-card-book" id="cta-book" target="_blank">
+              <div class="cta-card-inner">
+                <div class="cta-card-icon" id="cta-book-icon">
+                  <svg class="icon-book" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg>
+                </div>
+                <div>
+                  <h3 id="cta-book-title">Livro: 50 Tons do Recomeço</h3>
+                  <p class="cta-desc" id="cta-book-desc"></p>
+                  <span class="cta-action" id="cta-book-action">
+                    Conhecer o livro
+                    <svg class="icon-forward" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="cta-card cta-card-workshop" id="cta-workshop" target="_blank">
+              <div class="cta-tag" id="cta-workshop-tag">Vagas limitadas</div>
+              <div class="cta-card-inner">
+                <div class="cta-card-icon" id="cta-workshop-icon">
+                  <svg class="icon-academic" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/></svg>
+                </div>
+                <div>
+                  <h3 style="color:#fff">Workshop: A Adaptação Silenciosa</h3>
+                  <p class="cta-desc" id="cta-workshop-desc" style="color:rgba(255,255,255,0.88)"></p>
+                  <span class="cta-action" style="color:#fff">
+                    Quero participar
+                    <svg class="icon-forward" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- SOBRE A MENTORA -->
+        <div class="cta-section" style="margin-top: 40px; border-top: 1px solid rgba(139,111,123,0.1); padding-top: 32px;">
+          <div class="cta-card" style="cursor: default; padding: 0;">
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;">
+              <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-rose-border);">
+                <img src="/public/Anasueli.jpg" alt="Ana Sueli" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div>
+                <p class="cta-label" style="margin-bottom: 8px;">Quem vai te guiar</p>
+                <h3 style="font-family: var(--font-display); font-size: 20px; color: var(--text-dark); margin-bottom: 8px;">Ana Sueli</h3>
+                <p style="font-size: 14px; color: var(--text-soft); line-height: 1.6;">Doutora em Educação e Mentora de Mulheres na Segunda Metade da Vida. Criadora da Arquitetura do Recomeço™.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOOP DE AUTORIDADE -->
+        <div class="share-section">
+          <div class="share-glow"></div>
+          <p class="share-label">LOOP DE AUTORIDADE</p>
+          <h2 class="share-title">SUA VOZ MERECE SER PROPAGADA.</h2>
+          <p class="share-subtitle">Se esse diagnóstico fez sentido para você, compartilhe com outras mulheres que também podem estar passando por isso em silêncio.</p>
+          <div class="share-btns-grid">
+            <button class="share-btn-wa" onclick="shareWhatsApp()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-11.891z"/></svg>
+              Compartilhar no WhatsApp
+            </button>
+            <button class="share-btn-native" onclick="shareNative()">
+              <svg class="icon-chat" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+              Outras Opções
+            </button>
+          </div>
+        </div>
+
+        <div class="result-footer">
+          <button class="btn-restart" onclick="restartQuiz()">
+            <svg class="icon-back" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182"/></svg>
+            Refazer o quiz
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="foot">
+  <p class="fn">Ana Sueli | Mentora de Mulheres na Segunda Metade da Vida</p>
+  <br>
+  <p>Arquitetura do Recomeço na Segunda Metade da Vida</p>
+  <br>
+  <p style="margin-top:.35rem;opacity:.4">© 2026 Todos os direitos reservados.</p>
+</footer>
+
+<script src="/quiz/scripts/main.js"></script>
+</body>
+</html>
