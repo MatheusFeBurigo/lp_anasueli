@@ -10,6 +10,7 @@ app.get('/quiz', (req, res) => res.sendFile(path.join(__dirname, 'Quiz', 'index.
 // Servir pastas de cada site (para assets)
 app.use('/recomeco', express.static(path.join(__dirname, 'recomeco'), { redirect: false }));
 app.use('/quiz', express.static(path.join(__dirname, 'Quiz'), { redirect: false }));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Rota raiz
 app.get('/', (req, res) => {
